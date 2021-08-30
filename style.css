@@ -2,8 +2,8 @@
 :root{
     --default-color: hsl(270, 2%, 50%);
     --hover-color: hsl(270, 2%, 50%); 
-    --focus-color: #00C1D4;
-    --default-color-lb-text: grey;
+    --focus-color: hsl(185, 95%, 26%);
+    --default-color-lb-text: hsl(0, 0%,30%);
 }
 *{
     margin: 0;
@@ -54,6 +54,9 @@ label{
     margin-bottom: 5px;
     color: var(--default-color-lb-text);
 }
+.input-label span{
+    color: var(--default-color-lb-text);
+}
 
 p{
     margin: 0;
@@ -76,9 +79,10 @@ input:focus, textarea:focus{
     border: 1px solid var(--focus-color);
     --default-color-lb-text: #FF2442;
 }
-input:hover + label{
-    background: firebrick;
+.input-label:focus-within label, .input-label:focus-within p, .input-label:focus-within span{
+    color: var(--focus-color);
 }
+
 
 
 .input{
