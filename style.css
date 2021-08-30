@@ -76,6 +76,9 @@ input:focus, textarea:focus{
     border: 1px solid var(--focus-color);
     --default-color-lb-text: #FF2442;
 }
+input:hover + label{
+    background: firebrick;
+}
 
 
 .input{
