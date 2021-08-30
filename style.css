@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+:root{
+    --default-color: hsl(270, 2%, 50%);
+    --hover-color: hsl(270, 2%, 50%); 
+    --focus-color: #00C1D4;
+    --default-color-lb-text: black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.pastel{
+    --default-color: #a0c4ff;
+    --hover-color: #a0c4ff; 
+    --focus-color: #9bf6ff;
+}
+.cool{
+    --default-color: #4361ee;
+    --hover-color: #4361ee; 
+    --focus-color: #4cc9f0;
+}
+.forest{
+    --default-color: #95d5b2;
+    --hover-color:#95d5b2;
+    --focus-color: #52b788;
+
+}
+.autum{
+    --default-color: #b5838d;
+    --hover-color:#b5838d;
+    --focus-color: #ffb4a2;
+}
+.render-page{
+    min-height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10vw;
+}
+
+.input-label{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    
+}
+.full{
+    width: 100%;
+}
+
+label{
+    margin-bottom: 5px;
+    color: var(--default-color-lb-text);
+}
+p{
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    font-size: 15px;
+    color: var(--default-color-lb-text); 
+}
+input, textarea{
+    border: 0.5px solid var(--default-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+input:hover, textarea:hover{
+    border-width: 1px;
+}
+input:focus, textarea:focus{
+    border: 1px solid var(--focus-color);
+}
+input:hover label, textarea:hover label{
+    color: var(--focus-color);  
+}
+input:focus label, textarea:focus label{
+    color: var(--focus-color);
+}
+
+.input{
+    width: 100%;
+    position: relative;
+}
+.left span, .right span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+}
+.left span{
+    left: 15px;
+    margin-right: 15px;
+}
+.left input, .left textarea{
+    padding-left: 45px;
+}
+.right span{
+    right: 15px;
+}
+.right input, .left textarea{
+    padding-right: 45px;
+}
+
+
+
+
+.error{
+    --default-color-lb-text: #FF2442;
+    --default-color: #FF2442;
+    --focus-color: #FF2442;
+}
+.disabled{
+    --default-color-lb-text: hsl(270, 2%, 50%);
+    --default-color: hsla(276, 2%, 50%, 0.151);
+    --focus-color: hsla(276, 2%, 50%, 0.151);
+    --hover-color: hsla(276, 2%, 50%, 0.151);
+}
+.disabled input, .disabled textarea{
+    background: hsla(276, 2%, 50%, 0.151);
+    cursor: not-allowed;
+}
+.disabled input:hover, .disabled input:focus, .disabled textarea:hover, .disabled textarea:focus{
+    border-width: 0.5px;
+}
+
+.large{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.small{
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+

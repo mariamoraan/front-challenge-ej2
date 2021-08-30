@@ -1,0 +1,98 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- https://material.io/resources/icons/?style=baseline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=outline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=round -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=sharp -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
+        rel="stylesheet">
+    <!-- https://material.io/resources/icons/?style=twotone -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone"
+        rel="stylesheet">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Input Component</title>
+    </head>
+    <body>
+        <div id="react-page"></div>
+        <script type="text/babel">
+            var $app = document.getElementById('react-page');
+            function Input(props){
+                var type = props.type ? props.type : 'text';
+                var class_name = "input-label";
+                class_name += props.error ? ' error' : '';
+                class_name += props.fullwidth ? ' full' : '';
+                class_name += props.disabled ? ' disabled' : '';
+                class_name += props.theme ? ' ' + props.theme : '';
+
+
+                var input_class = 'input';
+                input_class += props.startIcon ? ' left' : '';
+                input_class += props.endIcon ? ' right' : '';
+
+                var icon = props.startIcon ? props.startIcon : props.endIcon ? props.endIcon : false;
+                var is_disabled = props.disabled ? true : false;
+
+                var class_name_input = props.size == 'sm' ? ' small' : props.size == 'lg' ? ' large' : '';
+
+
+                
+                
+                return (
+                    <div className={class_name}>
+                        <label>{props.label ? props.label : 'Label'}</label>
+                        <div className={input_class}>
+                            {icon ?
+                            (<span className="material-icons-outlined ">{icon}</span>)
+                            :
+                            ''
+                            }
+                            {
+                                props.textarea ?
+                                (<textarea  className={class_name_input} rows={props.rows ?  props.rows : '10'}  placeholder={props.placeholder ? props.placeholder : 'Placeholder'} disabled={is_disabled}></textarea>)
+                                :
+                                (<input className={class_name_input}  placeholder={props.placeholder ? props.placeholder : 'Placeholder'} disabled={is_disabled} />)
+
+                            }
+                        </div>
+                        {
+                        props.help ?
+                        <p>{props.help}</p>
+                        :
+                        ''
+                        }
+                    </div>  
+                )
+            }
+            ReactDOM.render(
+                <div className="render-page">
+                    <Input />
+                    <Input error />
+                    <Input disabled />
+                    <Input help="I am a help text" />
+                    <Input endIcon="info" />
+                    <Input startIcon="thumb_up_off_alt" />
+                    <Input size="sm" />
+                    <Input size="md" />
+                    <Input size="lg" />
+                    <Input theme="pastel" />
+                    <Input theme="cool" />
+                    <Input theme="forest" />
+                    <Input theme="autum" />
+                    <Input fullwidth/>
+                    <Input textarea rows='5'/>
+                </div>
+                , $app);
+        </script>
+    </body>
+</html>
