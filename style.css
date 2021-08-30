@@ -3,7 +3,7 @@
     --default-color: hsl(270, 2%, 50%);
     --hover-color: hsl(270, 2%, 50%); 
     --focus-color: #00C1D4;
-    --default-color-lb-text: black;
+    --default-color-lb-text: grey;
 }
 *{
     margin: 0;
@@ -54,6 +54,7 @@ label{
     margin-bottom: 5px;
     color: var(--default-color-lb-text);
 }
+
 p{
     margin: 0;
     padding: 0;
@@ -73,13 +74,9 @@ input:hover, textarea:hover{
 }
 input:focus, textarea:focus{
     border: 1px solid var(--focus-color);
+    --default-color-lb-text: #FF2442;
 }
-input:hover label, textarea:hover label{
-    color: var(--focus-color);  
-}
-input:focus label, textarea:focus label{
-    color: var(--focus-color);
-}
+
 
 .input{
     width: 100%;
@@ -140,4 +137,6 @@ input:focus label, textarea:focus label{
     padding-top: 5px;
     padding-bottom: 5px
 }
+
+
 
