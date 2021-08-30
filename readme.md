@@ -1,4 +1,5 @@
 # Front-End challenge Exercise 2
+[Deploy](https://mia-moran.github.io/front-challenge-ej2/)
 ## Objetive
 The objetive of this exercise is to create an input component with the follow features:
 * I can see error state
